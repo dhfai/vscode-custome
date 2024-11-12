@@ -2,14 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkElement = setInterval(() => {
         const commandDialog = document.querySelector(".quick-input-widget");
         if (commandDialog) {
-            // Check if the command palette element is visible for the first time.
             if (commandDialog.style.display !== "none") {
                 applyBlur();
             }
             observeCommandDialog(commandDialog);
             clearInterval(checkElement);
         }
-    }, 500); // Check every 0.5s
+    }, 500);
 
     function observeCommandDialog(commandDialog) {
         const observer = new MutationObserver(() => {
